@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+
+@font-face {
+	font-family: "Minecraft";
+	src: url("../fonts/Minecraft.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.results-container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+	position: relative;
+	padding: 2rem;
+	overflow-y: auto;
+}
+
+.background-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.background-overlay::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+	opacity: 0.1;
+	pointer-events: none;
+}
+
+.results-content {
+	position: relative;
+
+	border-radius: 20px;
+	padding: 3rem;
+	max-width: 60%;
+	width: 90%;
+
+	z-index: 1;
+	margin: auto;
+}
+
+.game-finished-text {
+	font-family: "Minecraft", "Orbitron", sans-serif;
+	font-weight: 700;
+	color: #ffffff;
+	text-align: center;
+	font-size: 4rem;
+	line-height: 1.4;
+	margin-bottom: 3rem;
+	background: linear-gradient(45deg, #00ff9d, #00b8ff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+	letter-spacing: 10px;
+}
+
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+.stat-card {
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: 15px;
+	padding: 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.stat-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+	transform: translateX(-100%);
+	transition: transform 0.6s ease;
+}
+
+.stat-card:hover::before {
+	transform: translateX(100%);
+}
+
+.stat-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	border-color: rgba(0, 255, 157, 0.2);
+}
+
+.stat-card h3 {
+	font-family: "Minecraft", "Orbitron", sans-serif;
+	font-weight: 500;
+	color: #a0a0a0;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin-bottom: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.progress-bar {
+	height: 6px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 3px;
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.progress-bar::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+.progress-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #00ff9d, #00b8ff);
+	border-radius: 3px;
+	position: relative;
+}
+
+.progress-fill::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	animation: shimmer 2s infinite;
+}
+
+.stat-value {
+	font-family: "Minecraft", "Orbitron", sans-serif;
+	font-weight: 600;
+	color: #ffffff;
+	font-size: 2.2rem;
+	line-height: 1.3;
+	text-align: right;
+	text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+	letter-spacing: 4px;
+}
+
+.action-buttons {
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	margin-top: 3rem;
+}
+
+.action-button {
+	padding: 1.2rem 2.5rem;
+	border-radius: 10px;
+	font-family: "Minecraft", "Orbitron", sans-serif;
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.4;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.action-button.primary {
+	background: linear-gradient(45deg, #00ff9d, #00b8ff);
+	color: #0a0a1a;
+	box-shadow: 0 4px 20px rgba(0, 255, 157, 0.3);
+}
+
+.action-button.secondary {
+	background: rgba(255, 255, 255, 0.1);
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 25px rgba(0, 255, 157, 0.4);
+}
+
+.action-button:active {
+	transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+	.results-content {
+		padding: 2rem;
+		width: 95%;
+	}
+
+	.game-finished-text {
+		font-size: 2.5rem;
+	}
+
+	.stats-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.action-buttons {
+		flex-direction: column;
+	}
+
+	.action-button {
+		width: 100%;
+	}
+}
