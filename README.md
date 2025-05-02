@@ -133,7 +133,7 @@ Megathron/
 - *AI Agent*  
   - Receives character-prompt  
   - Calls OpenAI’s DALL·E 3 API  
-  - Saves sprite to /static/images/  
+  - Saves sprite to Appwrite Cloud Storage 
 - *Auth Agent*  
   - Verifies Solana wallet signature  
   - Issues session token  
