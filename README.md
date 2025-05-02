@@ -8,9 +8,9 @@ Megathron is a retro-style, Sega Genesis-inspired 8-bit shoot-and-run game built
 
 ---
 
-## 📹 Demo Video
+## 📹 Presentation Video
 
-Watch the demo on [YouTube](https://www.youtube.com/watch?v=T-1vgFneeRg).
+Watch the presentation on [YouTube](https://www.youtube.com/watch?v=T-1vgFneeRg).
 ---
 
 ## 🚀 Features
@@ -51,40 +51,41 @@ Watch the demo on [YouTube](https://www.youtube.com/watch?v=T-1vgFneeRg).
 
 
 ### 1. Clone repo
-bash
-git clone https://github.com/<your-org>/Megathron.git
-cd Megathron
+```bash
+git clone https://github.com/MOHDTOUFEEQ/Megathron-Game.git
+cd Megathron-Game
+```
 
 ### 2. Backend setup
-bash
+```bash
 cd Backend
 python3 -m venv env
 source env/bin/activate            # macOS/Linux
-# .\env\Scripts\activate           # Windows
+.\env\Scripts\activate           # Windows
 pip install -r requirements.txt
 
 #### Start Backend server
 python main.py
-
+```
 
 
 ### 3. Frontend setup
-bash
+```bash
 cd ../Frontend
 npm install
 npm run dev                        # starts Vite on localhost:3000
-
+```
 
 ### 4. Web3 auth UI
-bash
+```bash
 cd web3
 npm install && npm run dev
-
+```
 
 
 
 ## Project Structure
-bash
+```bash
 Megathron/
 ├── Backend/                       # FastAPI backend (AI, auth, leaderboard)
 │   ├── env/                       # Python venv & .env
@@ -115,7 +116,7 @@ Megathron/
 │   └── index.js                   # Entry point
 │
 └── README.md    
-
+```
 
 
 ## 🛠 How It Works
