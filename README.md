@@ -35,6 +35,20 @@ Watch the presentation on [YouTube](https://www.youtube.com/watch?v=T-1vgFneeRg)
 
 ---
 
+## 🎮 Game Controls
+
+Control your character using classic keyboard & mouse inputs:
+
+| Key                 | Function            |
+|---------------------|---------------------|
+| `W`                 | Move Up             |
+| `A`                 | Move Left           |
+| `S`                 | Move Down           |
+| `D`                 | Move Right          |
+| Right Mouse Click   | Fire Weapon         |
+
+---
+
 ## 📋 Prerequisites
 
 - *Node.js* ≥ v14  
